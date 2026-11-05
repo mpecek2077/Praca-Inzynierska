@@ -1,4 +1,4 @@
-/** Inicjały i kolor karty marki — bez oficjalnych logo / znaków towarowych OEM. */
+/** Inicjały i kolor karty marki - bez oficjalnych logo / znaków towarowych OEM. */
 
 const KNOWN_INITIALS: Record<string, string> = {
   bmw: "BMW",
@@ -12,7 +12,7 @@ const KNOWN_INITIALS: Record<string, string> = {
   ford: "FO",
 };
 
-/** Kolory UI (nie oficjalne palety marek) — tylko do rozróżnienia kart. */
+/** Kolory UI (nie oficjalne palety marek) - tylko do rozróżnienia kart. */
 const KNOWN_COLORS: Record<string, string> = {
   bmw: "#3d6ea5",
   audi: "#8a9099",

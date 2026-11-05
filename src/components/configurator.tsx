@@ -141,7 +141,7 @@ export function Configurator({ brands }: ConfiguratorProps) {
       <div className="panel config-panel">
         <h2>Marka</h2>
         <p className="muted catalog-disclaimer">
-          Karty marek to inicjały i kolor UI — bez oficjalnych logo ani znaków
+          Karty marek to inicjały i kolor UI - bez oficjalnych logo ani znaków
           towarowych OEM. Grafiki modeli i części są poglądowe.
         </p>
         <div className="catalog-card-grid">

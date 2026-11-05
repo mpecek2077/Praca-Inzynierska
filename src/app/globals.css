@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0f1419;
   --bg-elevated: #1a222c;
   --surface: #232d3a;
@@ -299,7 +299,7 @@ input {
   }
 }
 
-/* —— Etap 1: konfigurator + koszyk —— */
+/* -- Etap 1: konfigurator + koszyk -- */
 
 .config-steps {
   list-style: none;
@@ -607,7 +607,7 @@ input {
   border-top: 1px solid var(--border);
 }
 
-/* —— Etap 2: zamówienia —— */
+/* -- Etap 2: zamówienia -- */
 
 .order-meta {
   display: grid;
@@ -777,7 +777,7 @@ input {
   gap: 0.35rem;
 }
 
-/* —— Etap 3: admin —— */
+/* -- Etap 3: admin -- */
 
 .admin-shell {
   display: grid;
@@ -962,7 +962,7 @@ input {
   color: #ffc29a;
 }
 
-/* —— Katalog: karty marek/modeli + podział części —— */
+/* -- Katalog: karty marek/modeli + podział części -- */
 
 .catalog-card-grid {
   display: grid;
@@ -1120,7 +1120,7 @@ input {
   font-size: 0.9rem;
 }
 
-/* —— Wycena custom —— */
+/* -- Wycena custom -- */
 
 .wycena-form {
   color-scheme: dark;

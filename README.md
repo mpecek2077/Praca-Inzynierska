@@ -4,7 +4,7 @@ Aplikacja webowa (praca inżynierska) do konfiguracji i zamówień personalizowa
 
 **Stos:** Next.js (App Router) + TypeScript + PostgreSQL + Prisma + Auth.js (NextAuth v5).
 
-**Status:** MVP demo (Etapy 0–4). To repozytorium zawiera kod źródłowy — **nie jest hostingiem produkcyjnym**. Promotor / recenzent uruchamia aplikację lokalnie po sklonowaniu.
+**Status:** MVP demo (Etapy 0-4). To repozytorium zawiera kod źródłowy - **nie jest hostingiem produkcyjnym**. Promotor / recenzent uruchamia aplikację lokalnie po sklonowaniu.
 
 ---
 
@@ -76,7 +76,7 @@ Miniatury w `/public/parts/` to **grafiki poglądowe** (bez logo ani znaków tow
 
 ### Poza zakresem MVP (świadomie)
 
-- **Bramka płatności** (PayU / P24 / Stripe) — brak w aplikacji; temat tylko w części teoretycznej pracy
+- **Bramka płatności** (PayU / P24 / Stripe) - brak w aplikacji; temat tylko w części teoretycznej pracy
 - Realne dane katalogowe firmy
 - Pełny CRUD hierarchii Brand / Model / Generation (wystarczy wybór generacji przy części)
 

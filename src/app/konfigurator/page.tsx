@@ -13,7 +13,7 @@ export default async function KonfiguratorPage() {
       </p>
       <p className="muted catalog-disclaimer">
         Grafiki w katalogu są poglądowe (placeholdery). Nie pokazujemy oficjalnych
-        logo ani znaków towarowych OEM — marki to inicjały i kolor w karcie.
+        logo ani znaków towarowych OEM - marki to inicjały i kolor w karcie.
       </p>
       <Configurator brands={brands} />
     </section>

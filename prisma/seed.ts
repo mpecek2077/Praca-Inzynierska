@@ -1,4 +1,4 @@
-import { PrismaClient, Role } from "@prisma/client";
+﻿import { PrismaClient, Role } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
@@ -29,7 +29,7 @@ async function main() {
     },
   });
 
-  // Marki: bez imageUrl / logo OEM — UI pokazuje inicjały + kolor.
+  // Marki: bez imageUrl / logo OEM - UI pokazuje inicjały + kolor.
   const bmw = await prisma.brand.upsert({
     where: { slug: "bmw" },
     update: { imageUrl: null },
@@ -76,7 +76,7 @@ async function main() {
     create: { name: "Ford", slug: "ford", imageUrl: null },
   });
 
-  // Modele: lokalne ilustracje sylwetki (SVG) — bez logo OEM.
+  // Modele: lokalne ilustracje sylwetki (SVG) - bez logo OEM.
   const m3 = await prisma.model.upsert({
     where: { brandId_slug: { brandId: bmw.id, slug: "m3" } },
     update: { imageUrl: "/parts/model-m3.svg" },
