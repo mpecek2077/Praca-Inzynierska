@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#1c2430"/>
+      <stop offset="100%" stop-color="#0c1018"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.2" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b7c99" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#5b7c99" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5b7c99" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect width="640" height="400" fill="url(#glow)"/>
+  <circle cx="520" cy="90" r="110" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="36" y="52" fill="#9aabbc" font-family="Arial, Helvetica, sans-serif" font-size="20">FLYDES</text>
+  <text x="36" y="92" fill="#e8eef5" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Focus</text>
+  <path d="M80 292 L122 292 L148 244 L208 226 L248 164 L400 162 L458 214 L522 226 L555 292 L80 292 Z" fill="#344454" stroke="#222c38" stroke-width="3"/>
+  <circle cx="180" cy="294" r="27" fill="#1c2028"/><circle cx="180" cy="294" r="15" fill="none" stroke="#b4bec8" stroke-width="5"/>
+  <circle cx="475" cy="294" r="27" fill="#1c2028"/><circle cx="475" cy="294" r="15" fill="none" stroke="#b4bec8" stroke-width="5"/>
+  <line x1="60" y1="324" x2="600" y2="324" stroke="#9aabbc" stroke-opacity="0.25" stroke-width="2"/>
+</svg>

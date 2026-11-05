@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  NEW
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+}
+
+enum OrderType {
+  CATALOG
+  CUSTOM
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  orders       Order[]
+}
+
+model Brand {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  slug      String   @unique
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  models    Model[]
+}
+
+model Model {
+  id          String       @id @default(cuid())
+  name        String
+  slug        String
+  imageUrl    String?
+  brandId     String
+  brand       Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  generations Generation[]
+
+  @@unique([brandId, slug])
+}
+
+model Generation {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String
+  yearFrom  Int?
+  yearTo    Int?
+  modelId   String
+  model     Model    @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  parts     Part[]
+
+  @@unique([modelId, slug])
+}
+
+model Part {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String
+  description  String?
+  pricePln     Decimal     @db.Decimal(10, 2)
+  imageUrl     String?
+  modelUrl     String?
+  generationId String
+  generation   Generation  @relation(fields: [generationId], references: [id], onDelete: Cascade)
+  archivedAt   DateTime?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  orderItems   OrderItem[]
+
+  @@unique([generationId, slug])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type          OrderType   @default(CATALOG)
+  status        OrderStatus @default(NEW)
+  totalPln      Decimal     @db.Decimal(10, 2)
+  customPayload Json?
+  adminNote     String?
+  adjustedPrice Decimal?    @db.Decimal(10, 2)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  items         OrderItem[]
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  partId    String
+  part      Part    @relation(fields: [partId], references: [id], onDelete: Restrict)
+  quantity  Int     @default(1)
+  unitPrice Decimal @db.Decimal(10, 2)
+
+  @@unique([orderId, partId])
+}

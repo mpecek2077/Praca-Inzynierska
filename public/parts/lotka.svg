@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#242c38"/>
+      <stop offset="100%" stop-color="#121822"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.2" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c45c26" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#c45c26" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#c45c26" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect width="640" height="400" fill="url(#glow)"/>
+  <circle cx="520" cy="90" r="110" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="36" y="52" fill="#9aabbc" font-family="Arial, Helvetica, sans-serif" font-size="20">FLYDES</text>
+  <text x="36" y="92" fill="#e8eef5" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Lotka</text>
+  <path d="M90 265 L170 220 L290 155 L430 140 L540 155 L575 195 L500 220 L390 255 L250 285 L140 285 Z" fill="#c86937" stroke="#824424" stroke-width="3"/>
+  
+</svg>
