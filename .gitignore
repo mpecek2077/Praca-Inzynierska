@@ -57,3 +57,5 @@ custom-wycena-status.md
 ux-polish-*.md
 SCENARIUSZ-E2E.md
 /docs/
+.agents/
+skills-lock.json
