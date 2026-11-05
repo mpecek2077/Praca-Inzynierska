@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+﻿import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -7,7 +7,7 @@ const generation = await prisma.generation.findFirst({
 });
 
 if (!generation) {
-  console.error("Brak generacji — uruchom seed.");
+  console.error("Brak generacji - uruchom seed.");
   process.exit(1);
 }
 

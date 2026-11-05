@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+﻿import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -8,7 +8,7 @@ const user = await prisma.user.findUnique({
 const part = await prisma.part.findFirst({ orderBy: { name: "asc" } });
 
 if (!user || !part) {
-  console.error("Brak usera demo lub części — uruchom seed.");
+  console.error("Brak usera demo lub części - uruchom seed.");
   process.exit(1);
 }
 
