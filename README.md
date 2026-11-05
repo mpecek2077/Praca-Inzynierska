@@ -117,3 +117,28 @@ Miniatury w `/public/parts/` to **grafiki poglądowe** (bez logo ani znaków tow
 1. Zaloguj jako USER → konfigurator → dodaj część do koszyka → złóż zamówienie  
 2. Zaloguj jako ADMIN → zmień status zamówienia  
 3. Sprawdź miniatury części (Ctrl+F5 przy cache)
+
+---
+
+## Demo online (opcjonalnie, za darmo)
+
+Aplikacja to Next.js + Postgres, więc sam GitHub nie wystarczy - potrzebny jest hosting aplikacji i baza.
+
+**Rekomendowany wariant:** [Vercel](https://vercel.com) (app) + [Neon](https://neon.tech) (Postgres).
+
+1. Załóż projekt Neon → skopiuj connection string (`DATABASE_URL`).
+2. Lokalnie (raz), na bazie Neon:
+   ```bash
+   set DATABASE_URL=postgresql://...   # PowerShell: $env:DATABASE_URL="..."
+   npx prisma migrate deploy
+   npm run db:seed
+   ```
+3. Zaimportuj repo na Vercel → ustaw zmienne:
+   - `DATABASE_URL` (z Neon)
+   - `AUTH_SECRET` (np. `openssl rand -base64 32`)
+   - `AUTH_URL` = URL po deployu, np. `https://praca-inzynierska.vercel.app`
+4. Deploy. Link z Vercel wysyłasz promotorowi.
+
+**Działa zdalnie:** konfigurator, koszyk, zamówienia katalogowe, logowanie, panel admina, seed.
+
+**Ograniczenie free/serverless:** upload pliku 3D przy wycenie custom zapisuje na dysk kontenera - na Vercel plik może zniknąć po restarcie. Do pokazu wystarczy ścieżka katalogowa; pełny upload online wymagałby Blob storage.
