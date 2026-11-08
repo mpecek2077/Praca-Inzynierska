@@ -160,12 +160,19 @@ input {
   cursor: pointer;
   background: var(--accent);
   color: #fff;
-  transition: background 0.15s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
 }
 
 .btn:hover {
   background: var(--accent-hover);
   color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn-secondary {

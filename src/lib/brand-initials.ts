@@ -29,7 +29,7 @@ const FALLBACK_PALETTE = [
   "#c45c26",
   "#5b7c99",
   "#6b8f71",
-  "#8b6b9a",
+  "#7a6b5a",
   "#9a7b4f",
   "#4a7c8c",
 ];
