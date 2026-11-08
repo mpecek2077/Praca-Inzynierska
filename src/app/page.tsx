@@ -1,32 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
-import { auth } from "@/lib/auth";
 
-export default async function HomePage() {
-  const session = await auth();
-
+export default function HomePage() {
   return (
-    <section className="hero">
-      <h1>FLYDES</h1>
-      <p>
-        Wybierz części do samochodu z katalogu albo wyślij własny model do wyceny
-        i zamówienia.
-      </p>
-      <div className="actions">
-        <Link href="/konfigurator" className="btn">
-          Konfigurator
-        </Link>
-        <Link href="/wycena" className="btn btn-secondary">
-          Wycena
-        </Link>
-        {session?.user ? (
-          <Link href="/zamowienia" className="btn btn-secondary">
-            Konto
+    <section className="hero hero-home">
+      <div className="hero-copy" data-enter>
+        <h1>FLYDES</h1>
+        <p>
+          Prywatny kanał zamówień B2B: konfiguruj części z katalogu albo wyślij
+          własny model do wyceny.
+        </p>
+        <div className="actions">
+          <Link href="/konfigurator" className="btn">
+            Konfigurator
           </Link>
-        ) : (
-          <Link href="/login" className="btn btn-secondary">
-            Logowanie
+          <Link href="/wycena" className="btn btn-secondary">
+            Wycena
           </Link>
-        )}
+        </div>
+      </div>
+      <div className="hero-visual" data-enter>
+        <Image
+          src="/parts/spoiler.png"
+          alt="Lotka aerodynamiczna z katalogu FLYDES"
+          width={960}
+          height={600}
+          priority
+          className="hero-visual-img"
+        />
       </div>
     </section>
   );

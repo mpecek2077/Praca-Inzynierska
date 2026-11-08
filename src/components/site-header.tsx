@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { logoutAction } from "@/lib/actions";
-import { SiteNav } from "@/components/site-nav";
+import { HeaderMenu } from "@/components/header-menu";
 
 export async function SiteHeader() {
   const session = await auth();
@@ -13,28 +13,12 @@ export async function SiteHeader() {
       <Link href="/" className="brand">
         FLY<span>DES</span> Platform
       </Link>
-      <div className="header-end">
-        <SiteNav isLoggedIn={isLoggedIn} isAdmin={isAdmin} />
-        {session?.user ? (
-          <div className="header-auth">
-            <span className="nav-user">{session.user.email}</span>
-            <form action={logoutAction}>
-              <button type="submit" className="btn-ghost">
-                Wyloguj
-              </button>
-            </form>
-          </div>
-        ) : (
-          <div className="header-auth">
-            <Link href="/login" className="nav-link">
-              Logowanie
-            </Link>
-            <Link href="/register" className="btn">
-              Rejestracja
-            </Link>
-          </div>
-        )}
-      </div>
+      <HeaderMenu
+        isLoggedIn={isLoggedIn}
+        isAdmin={isAdmin}
+        userEmail={session?.user?.email}
+        logoutAction={logoutAction}
+      />
     </header>
   );
 }

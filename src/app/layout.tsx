@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "FLYDES Platform",
   description:
-    "Platforma e-commerce do konfiguracji personalizowanych części samochodowych (MVP pracy inżynierskiej).",
+    "Kanał zamówień B2B FLYDES: konfiguracja części z katalogu i wycena własnych modeli (MVP pracy inżynierskiej).",
 };
 
 export default function RootLayout({
